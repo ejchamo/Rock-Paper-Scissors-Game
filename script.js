@@ -1,20 +1,11 @@
+let playerscore = 0;
+let computerscore = 0;
+
 function computerPlay() { 
     let word = ['Rock','Paper','Scissor'];
     let words = word[Math.floor(Math.random()*word.length)];
     return words;
 }
-
-// var playerscore = 0;
-// var computerscore = 0;
-
-// function game() {
-
-//     for (i = 0; i < 5; i++) {
-//       console.log(playRound(playerSelection, computerPlay(),playerscore, computerscore));
-//       console.log(playerscore,computerscore);
-//     }
-   
-// }
 
 
 function playRound(playerSelection, computerSelection) {
@@ -49,43 +40,63 @@ function playRound(playerSelection, computerSelection) {
 
   }
 
-  const playerSelection = "rock";
-console.log(playRound(playerSelection, computerPlay()));
+  const answersection = document.querySelector('.answersection');
 
+  const content = document.createElement('div');
+  content.classList.add('content');
+  
 
-function game() {
-    let playerscore = 0;
-    let computerscore = 0;
+let rock = document.querySelector('.rock');
+let paper = document.querySelector('.paper');
+let scissors = document.querySelector('.scissors');
+
+rock.addEventListener("click",function(){
     let result;
-    for (i = 0; i < 5; i++) {
-      result = playRound(playerSelection, computerPlay());
-        if (result.includes('win')){
-            console.log(result + " the player's score is " + ++playerscore + " and the computer's score is " + computerscore);
-        }
-        else if (result.includes('tie')){
-            console.log(result + " the player's score is " + playerscore + " and the computer's score is " + computerscore);
-        }
-        else {
-            console.log(result + " the player's score is " + playerscore + " and the computer's score is " + ++computerscore);
-        }
-    
+    result = playRound('rock',computerPlay());
+    if (result.includes('win')){
+        content.textContent = result + " the player's score is " + ++playerscore + " and the computer's score is " + computerscore;
+        answersection.appendChild(content);
     }
-    if (playerscore>computerscore){
-        console.log( ' You win');
+    else if (result.includes('tie')){
+        content.textContent = result + " the player's score is " + playerscore + " and the computer's score is " + computerscore;
+        answersection.appendChild(content);
     }
     else {
-        console.log( 'You lose');
+        content.textContent = result + " the player's score is " + playerscore + " and the computer's score is " + ++computerscore;
+        answersection.appendChild(content);
     }
-}
+});
 
-// function game() {
-//     let playerscore = 0;
-//     let computerscore = 0;
-//     for (i = 0; i < 5; i++) {
-//       console.log(playRound(playerSelection, computerPlay()).includes('win')) ?
-//       console.log(playRound(playerSelection, computerPlay()) + " the player's score is " + ++playerscore + " and the computer's score is " + computerscore) : 
-//       console.log(playRound(playerSelection, computerPlay()) + " the player's score is " + playerscore + " and the computer's score is " + ++computerscore);  
- 
-//     }
-// }
+paper.addEventListener("click",function(){
+    let result;
+    result = playRound('paper',computerPlay());
+    if (result.includes('win')){
+        content.textContent = result + " the player's score is " + ++playerscore + " and the computer's score is " + computerscore;
+        answersection.appendChild(content);
+    }
+    else if (result.includes('tie')){
+        content.textContent = result + " the player's score is " + playerscore + " and the computer's score is " + computerscore;
+        answersection.appendChild(content);
+    }
+    else {
+        content.textContent = result + " the player's score is " + playerscore + " and the computer's score is " + ++computerscore;
+        answersection.appendChild(content);
+    }
+});
 
+scissors.addEventListener("click",function(){
+    let result;
+    result = playRound('scissor',computerPlay());
+    if (result.includes('win')){
+        content.textContent = result + " the player's score is " + ++playerscore + " and the computer's score is " + computerscore;
+        answersection.appendChild(content);
+    }
+    else if (result.includes('tie')){
+        content.textContent = result + " the player's score is " + playerscore + " and the computer's score is " + computerscore;
+        answersection.appendChild(content);
+    }
+    else {
+        content.textContent = result + " the player's score is " + playerscore + " and the computer's score is " + ++computerscore;
+        answersection.appendChild(content);
+    }
+});

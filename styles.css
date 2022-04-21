@@ -1,0 +1,30 @@
+.rock,
+.paper,
+.scissors {
+    width: 200px;
+    height: 100px;
+    margin: 50px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    background: lightblue;
+    align-items: center;
+    justify-content: center;
+}
+
+.answersection {
+    padding-left: 110px;
+    height: 50px;
+    background: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 25px;
+}
+
+.title {
+    padding-right: 10px;
+}
